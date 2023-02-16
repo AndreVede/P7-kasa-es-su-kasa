@@ -1,0 +1,5 @@
+.rating {
+    margin-top: auto;
+    margin-bottom: auto;
+    @include flex-center(row);
+}

@@ -2,6 +2,16 @@
     height: 30px;
     width: 30px;
 
+    @include touch-pad-only {
+        height: 22px;
+        width: 22px;
+    }
+
+    @include mobile-only {
+        height: 15px;
+        width: 15px;
+    }
+
     &__path {
         fill: $color-grey-primary;
         &--active {

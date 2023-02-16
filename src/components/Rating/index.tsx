@@ -38,7 +38,7 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
 
     return (
         /* <Star key={'star-' + index.toString()} active={true} /> */
-        <div>
+        <div className="rating">
             {Array.apply(0, Array(starsTotal)).map((_, i) => (
                 <Star
                     key={'star-' + i.toString()}
