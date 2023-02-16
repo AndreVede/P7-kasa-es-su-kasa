@@ -4,6 +4,16 @@
     &--header {
         height: 65px;
         width: 218px;
+
+        @include touch-pad-only {
+            height: 60px;
+            width: 205px;
+        }
+
+        @include mobile-only {
+            height: 45px;
+            width: 135px;
+        }
     }
     &--footer {
         height: 40px;

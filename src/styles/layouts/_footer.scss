@@ -7,7 +7,27 @@
     padding-top: 68px;
     padding-bottom: 25px;
 
+    @include touch-pad-only {
+        padding-top: 65px;
+        padding-bottom: 40px;
+    }
+
+    @include mobile-only {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        gap: 20px;
+    }
+
     &__text {
         @include Montserrat(medium, 24px);
+
+        @include touch-pad-only {
+            font-size: 16px;
+        }
+
+        @include mobile-only {
+            font-size: 12px;
+        }
     }
 }

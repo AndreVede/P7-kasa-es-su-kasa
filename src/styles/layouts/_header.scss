@@ -6,6 +6,14 @@
     justify-content: space-between;
     padding: 40px 100px;
 
+    @include touch-pad-only {
+        padding: 30px;
+    }
+
+    @include mobile-only {
+        padding: 20px;
+    }
+
     &__nav {
         @include flex-center(row);
 
@@ -19,6 +27,16 @@
                     text-decoration: none;
                     @include Montserrat(medium, 24px);
                     color: $color-primary;
+                    white-space: nowrap;
+
+                    @include touch-pad-only {
+                        font-size: 20px;
+                    }
+
+                    @include mobile-only {
+                        font-size: 15px;
+                        text-transform: uppercase;
+                    }
                     &:hover {
                         text-decoration: underline;
                     }
