@@ -1,0 +1,62 @@
+.not-found {
+    @include flex-center(column);
+
+    gap: 182px;
+
+    padding-top: 80px;
+    padding-bottom: 200px;
+
+    @include touch-pad-only {
+        padding-top: 150px;
+        padding-bottom: 210px;
+    }
+
+    @include mobile-only {
+        padding-top: 180px;
+        padding-bottom: 233px;
+        gap: 133px;
+    }
+
+    &__content {
+        @include flex-center(column);
+        &__title {
+            @include Montserrat(bold, 288px);
+            color: $color-primary;
+            margin: 0;
+
+            @include touch-pad-only {
+                font-size: 180px;
+            }
+
+            @include mobile-only {
+                font-size: 96px;
+            }
+        }
+        &__message {
+            @include Montserrat(medium, 36px);
+            color: $color-primary;
+            text-align: center;
+
+            @include touch-pad-only {
+                font-size: 25px;
+            }
+
+            @include mobile-only {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__redirection {
+        color: $color-primary;
+        @include Montserrat(medium, 18px);
+
+        @include touch-pad-only {
+            font-size: 16px;
+        }
+
+        @include mobile-only {
+            font-size: 14px;
+        }
+    }
+}
