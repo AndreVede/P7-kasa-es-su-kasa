@@ -1,0 +1,23 @@
+@mixin desktop-only {
+    @media all and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+@mixin touch-pad-only {
+    $max-width: map-get($breakpoints, desktop) - 1px;
+    @media all and (min-width: map-get($breakpoints, touch-pad)) and (max-width: $max-width) {
+        @content;
+    }
+}
+@mixin Montserrat($weight, $size) {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: map-get($map: $fontWeight, $key: $weight);
+    font-size: $size;
+}
+@mixin flex-center($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}

@@ -1,0 +1,17 @@
+$color-primary: #ff6060;
+$color-secondary: #000000;
+$color-grey-primary: #e5e5e5;
+$color-grey-secondary: #f6f6f6;
+
+$breakpoints: (
+    desktop: 992px,
+    touch-pad: 700px,
+    min-phone: 300px,
+);
+
+$fontWeight: (
+    bold: 700,
+    medium: 500,
+    regular: 400,
+    light: 300,
+);
