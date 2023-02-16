@@ -11,11 +11,15 @@
 @import './components/logo-app';
 @import './components/banner';
 @import './components/card-location';
+@import './components/profile-pic';
+@import './components/star';
 
 // layouts
 @import './layouts/header';
 @import './layouts/footer';
 @import './layouts/404';
 @import './layouts/list-card-location';
+@import './layouts/rating';
 
 // pages
+@import './pages/fiche-logement';

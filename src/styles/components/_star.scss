@@ -1,0 +1,11 @@
+.star {
+    height: 30px;
+    width: 30px;
+
+    &__path {
+        fill: $color-grey-primary;
+        &--active {
+            fill: $color-primary;
+        }
+    }
+}
