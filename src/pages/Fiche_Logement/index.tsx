@@ -37,18 +37,31 @@ const FicheLogement: React.FC = () => {
             {location && (
                 <article className="fiche-logement">
                     {/* Composant carousel */}
-                    <div className="fiche-logement__container">
-                        <div className="fiche-logement__container__header">
-                            <div className="fiche-logement__container__header__presentation">
-                                <h1 className="fiche-logement__container__header__presentation__title">
+                    <div className="fiche-logement__header">
+                        <div className="fiche-logement__header__location-infos">
+                            <div className="fiche-logement__header__location-infos__presentation">
+                                <h1 className="fiche-logement__header__location-infos__presentation__title">
                                     {location.title}
                                 </h1>
-                                <span className="fiche-logement__container__header__presentation__localisation">
+                                <span className="fiche-logement__header__location-infos__presentation__localisation">
                                     {location.location}
                                 </span>
                             </div>
-                            <div className="fiche-logement__container__header__profil">
-                                <span className="fiche-logement__container__header__profil__name">
+                            <ul className="fiche-logement__header__location-infos__tags-list">
+                                {location.tags.map(tag => (
+                                    <li
+                                        key={tag + idLocation}
+                                        className="fiche-logement__header__location-infos__tags-list__item"
+                                    >
+                                        {tag}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="fiche-logement__header__infos">
+                            <div className="fiche-logement__header__infos__profil">
+                                <span className="fiche-logement__header__infos__profil__name">
                                     {jumpForEachWord(location.host.name)}
                                 </span>
 
@@ -57,24 +70,11 @@ const FicheLogement: React.FC = () => {
                                     alt={location.id + ' photo de profil'}
                                 />
                             </div>
-                        </div>
-
-                        <div className="fiche-logement__container__infos">
-                            <ul className="fiche-logement__container__infos__tags-list">
-                                {location.tags.map(tag => (
-                                    <li
-                                        key={tag + idLocation}
-                                        className="fiche-logement__container__infos__tags-list__item"
-                                    >
-                                        {tag}
-                                    </li>
-                                ))}
-                            </ul>
                             <Rating rating={Number(location.rating)} />
                         </div>
-                        <div className="fiche-logement__container__content">
-                            {/* 2 Composants Accordéon */}
-                        </div>
+                    </div>
+                    <div className="fiche-logement__content">
+                        {/* 2 Composants Accordéon */}
                     </div>
                 </article>
             )}
