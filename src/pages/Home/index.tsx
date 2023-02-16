@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../../components/Banner';
 
 import plageImg from '../../assets/images/plage.webp';
+import ListCardLocation from '../../components/ListCardLocation';
 
 const Home: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
                 imgSrc={plageImg}
                 imgAlt="paysage de plage"
             />
+            <ListCardLocation />
         </>
     );
 };

@@ -1,0 +1,24 @@
+.list-card-location {
+    margin: 42px;
+    padding: 56px;
+    width: auto;
+
+    background: $color-grey-secondary;
+    border-radius: 25px;
+
+    @include flex-center(row);
+    flex-wrap: wrap;
+    gap: 60px;
+
+    @include touch-pad-only {
+        margin: 30px;
+        padding: 25px;
+    }
+
+    @include mobile-only {
+        margin: 20px;
+        padding: 0;
+        gap: 20px;
+        background: transparent;
+    }
+}
