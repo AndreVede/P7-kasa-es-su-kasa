@@ -1,3 +1,32 @@
 .header-app {
-    @include flex-center(row);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 40px 100px;
+
+    &__nav {
+        @include flex-center(row);
+
+        &__liste {
+            @include flex-center(row);
+            gap: 15px;
+            &__item {
+                list-style: none;
+
+                &__link {
+                    text-decoration: none;
+                    @include Montserrat(medium, 24px);
+                    color: $color-primary;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    &--active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
 }

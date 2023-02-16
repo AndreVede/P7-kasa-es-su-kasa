@@ -1,5 +1,6 @@
-@mixin desktop-only {
-    @media all and (min-width: map-get($breakpoints, desktop)) {
+@mixin mobile-only {
+    $max-width: map-get($breakpoints, touch-pad) - 1px;
+    @media all and (max-width: map-get($breakpoints, $max-width)) {
         @content;
     }
 }

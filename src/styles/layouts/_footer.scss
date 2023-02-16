@@ -1,0 +1,13 @@
+.footer-app {
+    @include flex-center(column);
+    gap: 24px;
+    background: $color-secondary;
+    color: #ffffff;
+
+    padding-top: 68px;
+    padding-bottom: 25px;
+
+    &__text {
+        @include Montserrat(medium, 24px);
+    }
+}
