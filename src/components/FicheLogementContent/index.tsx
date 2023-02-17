@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Gallery from '../Gallery';
+import Carousel from '../Carousel';
 import ProfilePic from '../ProfilPic';
 import Rating from '../Rating';
 
@@ -41,7 +41,7 @@ const FicheLogementContent: React.FC<FicheLogementContentProps> = ({
         <>
             {location && (
                 <article className="fiche-logement">
-                    <Gallery images={location.pictures} />
+                    <Carousel images={location.pictures} />
                     <div className="fiche-logement__header">
                         <div className="fiche-logement__header__location-infos">
                             <div className="fiche-logement__header__location-infos__presentation">

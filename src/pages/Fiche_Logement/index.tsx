@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import Loading from '../../components/Loading';
 
 const FicheLogementContent = React.lazy(
     () => import('../../components/FicheLogementContent')
@@ -27,7 +28,7 @@ const FicheLogement: React.FC = () => {
     return (
         <>
             {idLocation && (
-                <Suspense fallback={<div>Loading ...</div>}>
+                <Suspense fallback={<Loading />}>
                     <FicheLogementContent
                         idLocation={idLocation}
                         notFound={notFound}

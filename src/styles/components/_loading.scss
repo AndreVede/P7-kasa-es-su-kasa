@@ -1,0 +1,44 @@
+.container-loading-spinner {
+    $width-loading: 100px;
+    $height-loading: 100px;
+
+    width: auto;
+    height: auto;
+
+    padding: 40px;
+    @include flex-center(column);
+
+    &__loading-spinner {
+        margin-left: auto;
+        margin-right: auto;
+
+        color: transparent;
+        display: inline-block;
+        position: relative;
+        width: $width-loading;
+        height: $height-loading;
+        & div {
+            transform-origin: $width-loading/2 $height-loading/2;
+            animation: loading-spinner 1.2s linear infinite;
+
+            &::after {
+                content: ' ';
+                display: block;
+                position: absolute;
+                top: 1%;
+                left: 46%;
+                width: $width-loading/13.3;
+                height: $height-loading/4.444;
+                border-radius: 20%;
+                background: $color-primary;
+            }
+
+            @for $i from 1 through 12 {
+                &:nth-child(#{$i}) {
+                    transform: rotate(#{($i - 1) * 30}deg);
+                    animation-delay: #{-1.1 + ($i - 1) * 0.1}s;
+                }
+            }
+        }
+    }
+}
