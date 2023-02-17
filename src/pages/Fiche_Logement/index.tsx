@@ -4,6 +4,7 @@ import { Location } from '../../models/Location';
 
 import data from '../../data/logements.json';
 import Rating from '../../components/Rating';
+import Gallery from '../../components/Gallery';
 
 /**
  * Jump lines when spaces were.
@@ -36,7 +37,7 @@ const FicheLogement: React.FC = () => {
         <>
             {location && (
                 <article className="fiche-logement">
-                    {/* Composant carousel */}
+                    <Gallery images={location.pictures} />
                     <div className="fiche-logement__header">
                         <div className="fiche-logement__header__location-infos">
                             <div className="fiche-logement__header__location-infos__presentation">
