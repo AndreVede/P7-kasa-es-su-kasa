@@ -48,38 +48,44 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     };
 
     return (
-        <div className="carousel">
-            <ButtonMovePic
-                orientation="left"
-                callback={() => movePic('left')}
-            />
-            <ButtonMovePic
-                orientation="right"
-                callback={() => movePic('right')}
-            />
-            <div
-                className="carousel__view"
-                style={{
-                    transform:
-                        'translatex(-' + (translateX * 100).toString() + '%)',
-                }}
-            >
-                {images.map((srcImg, i) => (
-                    <div className="carousel__view__item">
-                        <img
-                            key={
-                                i.toString() +
-                                '-picture-' +
-                                Date.now().toString()
-                            }
-                            src={srcImg}
-                            alt="images de description"
-                            className="carousel__view__pic"
-                        />
+        <>
+            {images.length > 0 && (
+                <div className="carousel">
+                    <ButtonMovePic
+                        orientation="left"
+                        callback={() => movePic('left')}
+                    />
+                    <ButtonMovePic
+                        orientation="right"
+                        callback={() => movePic('right')}
+                    />
+                    <div
+                        className="carousel__view"
+                        style={{
+                            transform:
+                                'translatex(-' +
+                                (translateX * 100).toString() +
+                                '%)',
+                        }}
+                    >
+                        {images.map((srcImg, i) => (
+                            <div className="carousel__view__item">
+                                <img
+                                    key={
+                                        i.toString() +
+                                        '-picture-' +
+                                        Date.now().toString()
+                                    }
+                                    src={srcImg}
+                                    alt="images de description"
+                                    className="carousel__view__pic"
+                                />
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-        </div>
+                </div>
+            )}
+        </>
     );
 };
 

@@ -18,7 +18,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children, variant }) => {
         <div
             className={'accordion' + (variant ? ' accordion--' + variant : '')}
         >
-            <div className="accordion__ban">
+            <div className="accordion__ban" onClick={() => toggleAccordion()}>
                 <h3 className="accordion__ban__title">{title}</h3>
                 <ButtonArrow
                     callback={() => toggleAccordion()}

@@ -5,6 +5,10 @@
     overflow: hidden;
 
     &__ban {
+        cursor: pointer;
+
+        user-select: none;
+
         color: #ffffff;
         background: $color-primary;
         display: flex;
