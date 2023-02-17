@@ -23,14 +23,17 @@ const ButtonMovePic: React.FC<ButtonMovePicProps> = ({
 };
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
-    const [translateX, setTranslateX] = useState<number>(1);
+    const [translateX, setTranslateX] = useState<number>(0);
     const imagesCount = images.length;
 
     const movePic = function (direction: 'left' | 'right') {
-        if (direction === 'left') {
+        if (imagesCount === 1) {
+            // Une seule image...
+            let newItem = 0;
+        } else if (direction === 'left') {
             // left
             let newItem = translateX - 1;
-            if (newItem <= 0) {
+            if (newItem < 0) {
                 newItem = imagesCount - 1;
             }
             setTranslateX(newItem);
@@ -38,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             // right
             let newItem = translateX + 1;
             if (newItem >= imagesCount) {
-                newItem = 1;
+                newItem = 0;
             }
             setTranslateX(newItem);
         }
