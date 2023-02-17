@@ -15,9 +15,23 @@
         padding: 10px 20px;
         border-radius: 5px;
 
+        @include touch-pad-only {
+            padding: 8px 15px;
+        }
+        @include mobile-only {
+            padding: 5px 10px;
+        }
+
         &__title {
             margin: 0;
             @include Montserrat(medium, 24px);
+
+            @include touch-pad-only {
+                font-size: 16px;
+            }
+            @include mobile-only {
+                font-size: 13px;
+            }
         }
         &__button {
             cursor: pointer;
@@ -31,6 +45,18 @@
             &--active {
                 transform: rotate(0);
             }
+
+            @include touch-pad-only {
+                height: 20px;
+                width: 20px;
+                margin-right: 0;
+            }
+
+            @include mobile-only {
+                height: 15px;
+                width: 15px;
+                margin-right: 0;
+            }
         }
     }
 
@@ -43,7 +69,7 @@
             justify-content: flex-start;
             align-items: flex-start;
 
-            padding: 27px 20px 20px 20px;
+            padding: 27px 20px 22px 20px;
 
             background: $color-grey-secondary;
             color: $color-primary;
@@ -51,53 +77,30 @@
             @include Montserrat(regular, 24px);
 
             animation: accordion-open 250ms ease-in-out both;
+
+            @include touch-pad-only {
+                font-size: 16px;
+                padding: 20px 15px 17px 15px;
+            }
+            @include mobile-only {
+                font-size: 13px;
+                padding: 17px 10px 12px 10px;
+            }
         }
     }
 
     &--fiche-logement {
         & .accordion__ban {
-            @include touch-pad-only {
-                padding: 8px 15px;
-            }
-            @include mobile-only {
-                padding: 5px 10px;
-            }
             &__title {
                 font-size: 18px;
-
-                @include touch-pad-only {
-                    font-size: 16px;
-                }
-                @include mobile-only {
-                    font-size: 13px;
-                }
             }
 
             &__button {
                 margin: 0;
-
-                @include touch-pad-only {
-                    height: 20px;
-                    width: 20px;
-                }
-
-                @include mobile-only {
-                    height: 15px;
-                    width: 15px;
-                }
             }
         }
         & .accordion__container__content {
             font-size: 18px;
-
-            @include touch-pad-only {
-                font-size: 16px;
-                padding: 20px 15px 15px 15px;
-            }
-            @include mobile-only {
-                font-size: 13px;
-                padding: 17px 10px 10px 10px;
-            }
         }
     }
 }
