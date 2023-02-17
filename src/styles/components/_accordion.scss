@@ -80,7 +80,7 @@
             border-radius: 0 0 5px 5px;
             @include Montserrat(regular, 24px);
 
-            animation: accordion-open 250ms ease-in-out both;
+            transition: all 200ms ease-in-out;
 
             @include touch-pad-only {
                 font-size: 16px;

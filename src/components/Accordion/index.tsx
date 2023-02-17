@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ButtonArrow from '../ButtonArrow';
 
 interface AccordionProps {
@@ -9,9 +9,20 @@ interface AccordionProps {
 
 const Accordion: React.FC<AccordionProps> = ({ title, children, variant }) => {
     const [open, setOpen] = useState<boolean>(false);
+    const [onOff, setOnOff] = useState<boolean>(false);
+
+    const animationFadeIn = useEffect(() => {
+        if (open) {
+            setOnOff(true);
+        }
+    }, [open]);
 
     const toggleAccordion = function (): void {
-        setOpen(!open);
+        if (!open) {
+            setOpen(true);
+        } else {
+            setOnOff(false);
+        }
     };
 
     return (
@@ -32,7 +43,20 @@ const Accordion: React.FC<AccordionProps> = ({ title, children, variant }) => {
             </div>
             {open && (
                 <div className="accordion__container">
-                    <div className="accordion__container__content">
+                    <div
+                        className="accordion__container__content"
+                        style={{
+                            transform:
+                                open !== onOff
+                                    ? 'translateY(-100%)'
+                                    : 'translateY(0)',
+                        }}
+                        onTransitionEnd={() => {
+                            if (!onOff) {
+                                setOpen(!open);
+                            }
+                        }}
+                    >
                         {children}
                     </div>
                 </div>

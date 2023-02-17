@@ -69,13 +69,17 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                         }}
                     >
                         {images.map((srcImg, i) => (
-                            <div className="carousel__view__item">
+                            <div
+                                className="carousel__view__item"
+                                key={
+                                    i.toString() +
+                                    Date.now().toString() +
+                                    Math.floor(
+                                        Math.random() * Date.now()
+                                    ).toString()
+                                }
+                            >
                                 <img
-                                    key={
-                                        i.toString() +
-                                        '-picture-' +
-                                        Date.now().toString()
-                                    }
                                     src={srcImg}
                                     alt="images de description"
                                     className="carousel__view__pic"
