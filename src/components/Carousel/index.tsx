@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ButtonArrow from '../ButtonArrow';
 
 interface CarouselProps {
     images: string[];
@@ -14,22 +15,10 @@ const ButtonMovePic: React.FC<ButtonMovePicProps> = ({
     callback,
 }) => {
     return (
-        <svg
-            onClick={() => callback()}
-            role="button"
+        <ButtonArrow
             className={'carousel-button carousel-button--' + orientation}
-            viewBox="0 0 79.199974 46.680016"
-            fill="none"
-            version="1.1"
-            id="svg4"
-        >
-            <path
-                d="m 72.11998,46.680016 7.079995,-7.12 L 39.6,7.5195313e-7 -1.4984131e-7,39.600016 7.0799999,46.680016 39.6,14.160016 Z"
-                fill="white"
-                id="path2"
-                style={{ fill: '#ffffff' }}
-            />
-        </svg>
+            callback={callback}
+        />
     );
 };
 
@@ -75,7 +64,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                 {images.map((srcImg, i) => (
                     <div className="carousel__view__item">
                         <img
-                            key={i.toString() + 'picture'}
+                            key={
+                                i.toString() +
+                                '-picture-' +
+                                Date.now().toString()
+                            }
                             src={srcImg}
                             alt="images de description"
                             className="carousel__view__pic"

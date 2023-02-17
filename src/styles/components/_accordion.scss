@@ -1,0 +1,103 @@
+.accordion {
+    width: 100%;
+    display: block;
+
+    overflow: hidden;
+
+    &__ban {
+        color: #ffffff;
+        background: $color-primary;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 10px 20px;
+        border-radius: 5px;
+
+        &__title {
+            margin: 0;
+            @include Montserrat(medium, 24px);
+        }
+        &__button {
+            cursor: pointer;
+            height: 25px;
+            width: 25px;
+            margin-right: 12px;
+            transform: rotate(180deg);
+
+            transition: transform 0.2s ease-in;
+
+            &--active {
+                transform: rotate(0);
+            }
+        }
+    }
+
+    &__container {
+        overflow: hidden;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            padding: 27px 20px 20px 20px;
+
+            background: $color-grey-secondary;
+            color: $color-primary;
+            border-radius: 0 0 5px 5px;
+            @include Montserrat(regular, 24px);
+
+            animation: accordion-open 250ms ease-in-out both;
+        }
+    }
+
+    &--fiche-logement {
+        & .accordion__ban {
+            @include touch-pad-only {
+                padding: 8px 15px;
+            }
+            @include mobile-only {
+                padding: 5px 10px;
+            }
+            &__title {
+                font-size: 18px;
+
+                @include touch-pad-only {
+                    font-size: 16px;
+                }
+                @include mobile-only {
+                    font-size: 13px;
+                }
+            }
+
+            &__button {
+                margin: 0;
+
+                @include touch-pad-only {
+                    height: 20px;
+                    width: 20px;
+                }
+
+                @include mobile-only {
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+        }
+        & .accordion__container__content {
+            font-size: 18px;
+
+            @include touch-pad-only {
+                font-size: 16px;
+                padding: 20px 15px 15px 15px;
+            }
+            @include mobile-only {
+                font-size: 13px;
+                padding: 17px 10px 10px 10px;
+            }
+        }
+    }
+}

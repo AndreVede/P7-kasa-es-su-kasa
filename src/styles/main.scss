@@ -13,8 +13,10 @@
 @import './components/card-location';
 @import './components/profile-pic';
 @import './components/star';
+@import './components/arrow-button';
 @import './components/carousel';
 @import './components/loading';
+@import './components/accordion';
 
 // layouts
 @import './layouts/header';
@@ -25,3 +27,4 @@
 
 // pages
 @import './pages/fiche-logement';
+@import './pages/a-propos';

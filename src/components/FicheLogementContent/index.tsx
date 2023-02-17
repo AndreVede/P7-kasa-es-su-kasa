@@ -6,6 +6,7 @@ import Rating from '../Rating';
 import { Location } from '../../models/Location';
 
 import data from '../../data/logements.json';
+import Accordion from '../Accordion';
 
 /**
  * Jump lines when spaces were.
@@ -79,7 +80,23 @@ const FicheLogementContent: React.FC<FicheLogementContentProps> = ({
                         </div>
                     </div>
                     <div className="fiche-logement__content">
-                        {/* 2 Composants Accordéon */}
+                        <Accordion title="Description" variant="fiche-logement">
+                            <p className="fiche-logement__content__description">
+                                {location.description}
+                            </p>
+                        </Accordion>
+                        <Accordion title="Équipements" variant="fiche-logement">
+                            <ul className="fiche-logement__content__list">
+                                {location.equipments.map(equip => (
+                                    <li
+                                        key={idLocation + '-' + equip}
+                                        className="fiche-logement__content__list__item"
+                                    >
+                                        {equip}
+                                    </li>
+                                ))}
+                            </ul>
+                        </Accordion>
                     </div>
                 </article>
             )}
