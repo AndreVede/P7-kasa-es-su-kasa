@@ -9,7 +9,7 @@ interface LocationCardProps {
 
 const CardLocation: React.FC<LocationCardProps> = ({ id, title, cover }) => {
     return (
-        <Link to={'/Fiche_Logement?id=' + id} className="card-location">
+        <Link to={'/Fiche_Logement/' + id} className="card-location">
             <div className="card-location__content">
                 <h2 className="card-location__content__title">{title}</h2>
                 <img

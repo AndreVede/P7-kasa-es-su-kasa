@@ -13,7 +13,10 @@ const Rooter: React.FC = () => {
                 <Route path="/" element={<Layout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/A_Propos" element={<APropos />} />
-                    <Route path="/Fiche_Logement" element={<FicheLogement />} />
+                    <Route
+                        path="/Fiche_Logement/:idLocation"
+                        element={<FicheLogement />}
+                    />
                     <Route path="*" element={<PageNotFound />} />
                 </Route>
             </Routes>
