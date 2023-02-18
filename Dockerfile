@@ -6,3 +6,7 @@ COPY build/ /usr/local/apache2/htdocs/
 
 # Copie le fichier de configuration httpd.conf dans le répertoire de configuration Apache
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+
+# Suppression des .map
+
+RUN find /usr/local/apache2/htdocs/ -type f -name "*.map" -delete
