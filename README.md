@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Kasa
+
+**Projet Openclassrooms**. C'est un projet en **React**. Je l'ai fait avec un template **typescript**. J'y ai ajouté pour le plaisir un **dockerfile** et un **docker-compose.yml** pour déployer le projet. Pour cela, à la racine du projet, il faut exécuter `npm run build` puis `docker-compose up`. Si vous voulez actualiser l'image docker, la commande suivante fera l'affaire : `docker-compose build --no-cache`.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  kasa-app:
+    build: .
+    ports:
+      - "8081:80"
+    tty: true
+    restart: always
