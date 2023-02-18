@@ -35,7 +35,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, children, variant }) => {
                     callback={() => toggleAccordion()}
                     className={[
                         'accordion__ban__button',
-                        open ? 'accordion__ban__button--active' : null,
+                        onOff ? 'accordion__ban__button--active' : null,
                     ]
                         .filter(Boolean)
                         .join(' ')}
