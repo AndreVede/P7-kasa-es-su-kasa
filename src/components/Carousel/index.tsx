@@ -27,24 +27,24 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     const imagesCount = images.length;
 
     const movePic = function (direction: 'left' | 'right') {
+        let newItem: number;
         if (imagesCount === 1) {
             // Une seule image...
-            let newItem = 0;
+            newItem = 0;
         } else if (direction === 'left') {
             // left
-            let newItem = translateX - 1;
+            newItem = translateX - 1;
             if (newItem < 0) {
                 newItem = imagesCount - 1;
             }
-            setTranslateX(newItem);
         } else {
             // right
-            let newItem = translateX + 1;
+            newItem = translateX + 1;
             if (newItem >= imagesCount) {
                 newItem = 0;
             }
-            setTranslateX(newItem);
         }
+        setTranslateX(newItem);
     };
 
     return (
