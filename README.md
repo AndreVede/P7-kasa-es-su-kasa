@@ -1,6 +1,6 @@
 # Kasa
 
-**Projet Openclassrooms**. C'est un projet en **React**. Je l'ai fait avec un template **typescript**. J'y ai ajouté pour le plaisir un **dockerfile** et un **docker-compose.yml** pour déployer le projet. Pour cela, à la racine du projet, il faut exécuter `npm run build` puis `docker-compose up`. Par défaut je fais un déploiement sur le **port 8081**. Si vous voulez actualiser l'image docker, la commande suivante fera l'affaire : `docker-compose build --no-cache`.
+**Projet Openclassrooms**. C'est un projet en **React**. Je l'ai fait avec un template **typescript**. J'y ai ajouté pour le plaisir un **dockerfile** et un **docker-compose.yml** pour déployer le projet. Pour cela, à la racine du projet, il faut exécuter `docker-compose up`. Par défaut je fais un déploiement sur le **port 8081**. Si vous voulez actualiser l'image docker, la commande suivante fera l'affaire : `docker-compose build --no-cache`.
 
 ## Getting Started with Create React App
 
