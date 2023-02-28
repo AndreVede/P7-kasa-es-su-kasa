@@ -27,4 +27,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: build # The folder the action should deploy.
-        github_token: ${{ secrets.github_token_p7 }}
+        token: ${{ secrets.github_token_p7 }}
