@@ -36,7 +36,7 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        git-username: github-actions[bot]
-        git-mail: github-actions[bot]@users.noreply.github.com
+        git-config-name: github-actions[bot]
+        git-config-email: github-actions[bot]@users.noreply.github.com
         folder: build # The folder the action should deploy.
         token: ${{ secrets.TOKEN_DEPLOY }}
