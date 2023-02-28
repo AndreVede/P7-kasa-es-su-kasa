@@ -21,5 +21,3 @@ jobs:
   
   deployment:
     runs-on: p7-Kasa:latest
-    steps:
-      - name: deploy
