@@ -12,7 +12,7 @@ jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment: P7-React
 
     steps:
     - name: Checkout 🛎️
@@ -27,3 +27,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: build # The folder the action should deploy.
+        github_token: ${{ secret.github_token_p7 }}
