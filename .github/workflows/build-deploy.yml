@@ -11,8 +11,16 @@ on:
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
+    
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     runs-on: ubuntu-latest
-    environment: P7-React
 
     steps:
     - name: Checkout 🛎️
@@ -27,6 +35,3 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: build # The folder the action should deploy.
-        token: ${{ secrets.github_token_p7 }}
-        branch: deploy
-        single-commit: true
