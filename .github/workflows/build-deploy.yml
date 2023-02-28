@@ -28,5 +28,5 @@ jobs:
       with:
         folder: build # The folder the action should deploy.
         token: ${{ secrets.github_token_p7 }}
-        base_branch: master
-        SINGLE_COMMIT: true
+        branch: master
+        single-commit: true
