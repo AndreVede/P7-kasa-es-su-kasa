@@ -1,5 +1,7 @@
 name: Docker Image CI
 
+concurrency: production
+
 on:
   push:
     branches: [ "master" ]
@@ -15,4 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kasa7:$(date +%s)
+      run: docker build . --file Dockerfile --tag p7-Kasa:$(date +%s)
+  
+  deployment:
+    runs-on: p7-Kasa:latest
+    steps:
+      - name: deploy
