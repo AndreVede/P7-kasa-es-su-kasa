@@ -10,7 +10,7 @@ const Rooter: React.FC = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Layout />}>
+                <Route path="/P7-kasa-es-su-kasa" element={<Layout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/A_Propos" element={<APropos />} />
                     <Route
