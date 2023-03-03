@@ -59,6 +59,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                         orientation="right"
                         callback={() => movePic('right')}
                     />
+
+                    {/* Show index of picture */}
+                    <span className="carousel__index">
+                        {translateX + 1}/{imagesCount}
+                    </span>
+
                     <div
                         className="carousel__view"
                         style={{
