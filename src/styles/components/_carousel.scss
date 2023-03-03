@@ -4,6 +4,8 @@
     $heightMobile: 230px;
     $heightTouchPad: 309px;
 
+    position: relative;
+
     @include touch-pad-only {
         border-radius: 20px;
         height: $heightTouchPad;
@@ -62,6 +64,31 @@
             object-fit: cover;
         }
     }
+
+    &__index {
+        z-index: 1;
+        color: #ffffff;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        @include Montserrat(medium, 18px);
+        user-select: none;
+
+        @include touch-pad-only {
+            font-size: 15px;
+            border-radius: 2px;
+            backdrop-filter: brightness(80%);
+            padding: 0 2px;
+        }
+
+        @include mobile-only {
+            font-size: 12px;
+            border-radius: 2px;
+            backdrop-filter: brightness(80%);
+            padding: 0 2px;
+        }
+    }
 }
 
 .carousel-button {
@@ -89,6 +116,7 @@
         left: 1%;
         transform: translateY(-50%) rotate(-90deg);
     }
+
     &--right {
         right: 1%;
         transform: translateY(-50%) rotate(90deg);
